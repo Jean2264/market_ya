@@ -12,6 +12,9 @@
   width: 100%;
   max-width: 1080px;
   padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .top {
@@ -31,4 +34,36 @@
   background: transparent;
   cursor: pointer;
   font-size: 20px;
+}
+
+.nav-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-navigation ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.nav-link:hover {
+  transform: scale(1.05);
+  text-decoration: underline;
+}
+
+.nav-link.active {
+  transform: scale(1.2);
+  text-decoration: underline;
 }
