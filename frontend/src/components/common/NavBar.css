@@ -1,0 +1,34 @@
+.nav-top {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  background-color: white;
+  box-sizing: border-box;
+  box-shadow: var(--shadow-card);
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1080px;
+  padding: 0 16px;
+}
+
+.top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.nav-user {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-user button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 20px;
+}

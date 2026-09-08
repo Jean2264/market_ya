@@ -1,9 +1,9 @@
 import { useState } from "react";
+import "./styles/global.css";
+import PublicRoutes from "./routes/PublicRoutes";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <></>;
+  return <PublicRoutes />;
 }
 
 export default App;
