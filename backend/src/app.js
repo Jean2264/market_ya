@@ -2,12 +2,27 @@
 const express = require("express");
 const pool = require("./config/database");
 
+const path = require("path");
+
+const cors = require("cors");
+
+//importp las rutas
+const categoriaRoutes = require("./routes/categoria.routes");
+
 //creo la aplicacion express
 const app = express();
+
+app.use(cors());
 
 //configuro Express para poder recibir informacion
 //en formato JSON en las peticiones  HTTP
 app.use(express.json());
+
+//con esto le estoy diciendo a express que cualquiea pueda acceder a todo el contenido de uploads/ mediante Url
+app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
+
+//declaro las rutas
+app.use("/api/categorias", categoriaRoutes);
 
 //agregamos temporalmente una prueba para saber si nos podemos conectar a postgreSQL
 

@@ -1,0 +1,38 @@
+.category-card {
+  flex: 0 0 150px;
+  width: 150px;
+  padding: 12px;
+
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  background-color: white;
+  text-decoration: none;
+  color: var(--colot-text);
+  cursor: pointer;
+}
+
+.category-card img {
+  width: 100%;
+  height: 120px;
+  background-color: rgb(222, 222, 222);
+  object-fit: contain;
+  display: block;
+  transition: transform 0.2s ease;
+}
+.category-card img:hover {
+  transform: scale(1.05);
+}
+
+.categoria-name {
+  display: inline-block;
+  margin-top: 8px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.categoria-name:hover {
+  transform: scale(1.05);
+  text-decoration: underline;
+}

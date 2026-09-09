@@ -1,0 +1,110 @@
+.category-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  padding: 2rem;
+
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.carousel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.carousel-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.cat-link {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.cat-link:hover {
+  transform: scale(1.05);
+  text-decoration: underline;
+}
+
+.category-carousel strong {
+  font-weight: 550;
+}
+
+.carousel-body {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.carousel-contain {
+  width: 100%;
+
+  display: flex;
+  gap: 1rem;
+
+  overflow-x: auto;
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+}
+
+.carousel-contain::-webkit-scrollbar {
+  display: none;
+}
+
+/*f*/
+.btn-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+
+  flex: 0 0 auto;
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-card);
+
+  transform: translateY(-50%);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-arrow-left {
+  left: -22px;
+}
+
+.btn-arrow-right {
+  right: -22px;
+}
+
+.btn-arrow:hover {
+  transform: translateY(-50%) scale(1.08);
+}
+
+.btn-arrow i {
+  font-size: 28px;
+}
+
+.carousel-contain > * {
+  flex: 0 0 auto;
+}
