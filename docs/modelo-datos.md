@@ -65,3 +65,12 @@ Calificacion
 Comentario
 Fecha
 Estado
+
+### BENEFICIO
+
+IdBeneficio
+Titulo
+Descripcion
+Imagen
+Orden
+Estado

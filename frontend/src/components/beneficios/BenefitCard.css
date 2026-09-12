@@ -1,0 +1,42 @@
+.benefit-card {
+  flex: 0 0 150px;
+  width: 150px;
+  padding: 12px;
+
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  color: var(--colot-text);
+  cursor: pointer;
+}
+
+.benefit-card img {
+  width: 100%;
+  height: 40px;
+
+  object-fit: contain;
+  display: block;
+}
+
+.beneficio-name {
+  display: inline-block;
+  margin-top: 8px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 550;
+}
+
+.benefit-description {
+  display: inline-block;
+  margin-top: 2px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.benefit-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

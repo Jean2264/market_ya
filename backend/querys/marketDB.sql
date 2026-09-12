@@ -27,3 +27,89 @@ Orden INTEGER,
 Estado BOOLEAN OT 
 
 )
+
+
+CREATE TABLE Beneficio
+(
+    IdBeneficio SERIAL PRIMARY KEY,
+    Titulo VARCHAR(100) NOT NULL,
+    Descripcion VARCHAR(200),
+    Imagen VARCHAR(500),
+    OrdenHome INTEGER NOT NULL,
+    Estado BOOLEAN NOT NULL DEFAULT TRUE
+);
+
+
+INSERT INTO Beneficio
+(Titulo, Descripcion, Imagen, OrdenHome)
+VALUES
+(
+    'ENVÍOS',
+    'A todo el país',
+    '/uploads/benefit/enviado.png',
+    1
+),
+(
+    'HASTA 6 CUOTAS',
+    'Sin interés',
+    '/uploads/benefit/tarjeta.png',
+    2
+),
+(
+    'GARANTÍA',
+    'De satisfacción',
+    '/uploads/benefit/seguro-de-calidad.png',
+    3
+),
+(
+    'CAMBIOS',
+    'Sin cargos',
+    '/uploads/benefit/cambio.png',
+    4
+),
+(
+    'ATENCIÓN',
+    'Personalizada',
+    '/uploads/benefit/atencion-al-cliente.png',
+    5
+);
+
+delete  from Beneficio
+
+update Beneficio
+set Titulo='Envios' where IdBeneficio=1
+
+
+
+CREATE TABLE SeccionHome
+(
+    IdSeccion SERIAL PRIMARY KEY,
+    Titulo VARCHAR(150) NOT NULL,
+    Tipo VARCHAR(50) NOT NULL,
+    OrdenHome INTEGER NOT NULL,
+    MostrarEnHome BOOLEAN NOT NULL DEFAULT TRUE,
+    Estado BOOLEAN NOT NULL DEFAULT TRUE
+);
+
+
+
+CREATE TABLE SeccionProducto
+(
+    IdSeccionProducto SERIAL PRIMARY KEY,
+
+    SeccionId INTEGER NOT NULL,
+    ProductoId INTEGER NOT NULL,
+
+    Orden INTEGER NOT NULL DEFAULT 1,
+
+    CONSTRAINT FK_SeccionProducto_Seccion
+        FOREIGN KEY (SeccionId)
+        REFERENCES SeccionHome(IdSeccion),
+
+    CONSTRAINT FK_SeccionProducto_Producto
+        FOREIGN KEY (ProductoId)
+        REFERENCES Producto(IdProducto),
+
+    CONSTRAINT UQ_SeccionProducto
+        UNIQUE (SeccionId, ProductoId)
+);

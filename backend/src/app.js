@@ -8,6 +8,7 @@ const cors = require("cors");
 
 //importp las rutas
 const categoriaRoutes = require("./routes/categoria.routes");
+const beneficioRoutes = require("./routes/beneficio.routes");
 
 //creo la aplicacion express
 const app = express();
@@ -23,6 +24,7 @@ app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 
 //declaro las rutas
 app.use("/api/categorias", categoriaRoutes);
+app.use("/api/beneficios", beneficioRoutes);
 
 //agregamos temporalmente una prueba para saber si nos podemos conectar a postgreSQL
 
