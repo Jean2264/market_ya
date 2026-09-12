@@ -126,7 +126,7 @@ VALUES
 );
 
 update SeccionHome
-set OrdenHome=4 WHERE IdSeccion= 3
+set OrdenHome=2 WHERE IdSeccion= 1
 SELECT *
 FROM SeccionHome
 ORDER BY OrdenHome;
