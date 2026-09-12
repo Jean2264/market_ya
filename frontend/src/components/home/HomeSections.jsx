@@ -1,7 +1,7 @@
 import "./HomeSections.css";
 import { useEffect, useState } from "react";
 import { obtenerSeccionesHome } from "../../services/seccionService";
-
+import HomeSection from "./HomeSection";
 function HomeSections() {
   const [secciones, setSecciones] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -33,10 +33,7 @@ function HomeSections() {
   return (
     <section>
       {secciones.map((seccion) => (
-        <div key={seccion.idseccion}>
-          <h2>{seccion.titulo}</h2>
-          <p>{seccion.tipo}</p>
-        </div>
+        <HomeSection seccion={seccion} />
       ))}
     </section>
   );

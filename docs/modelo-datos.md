@@ -3,17 +3,18 @@
 ### CATEGORIA
 
 IdCategoria PK
-CodCategoria
+CodCategoria UNIQUE
 Nombre
 MostrarEnHome
 OrdenHome
 Estado
+Imagen
 
 ### SUBCATEGORIA
 
 IdSubcategoria PK
 IdCategoria FK
-CodSubcategoria
+CodSubcategoria UNIQUE
 Nombre
 Orden
 Estado
@@ -74,3 +75,22 @@ Descripcion
 Imagen
 Orden
 Estado
+
+### SECCION HOME
+
+SECCION_HOME
+
+IdSeccion
+Titulo
+Tipo
+IdCategoria FK NULL
+OrdenHome
+MostrarEnHome
+Estado
+
+### SECCION PRODUCTO
+
+IdSeccionProducto PK
+IdSeccion FK
+IdProducto FK
+Orden

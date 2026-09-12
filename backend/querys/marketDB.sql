@@ -92,6 +92,46 @@ CREATE TABLE SeccionHome
 );
 
 
+INSERT INTO SeccionHome
+(
+    Titulo,
+    Tipo,
+    OrdenHome,
+    MostrarEnHome
+)
+VALUES
+(
+    'PRODUCTOS NUEVOS',
+    'PRODUCTOS_NUEVOS',
+    1,
+    TRUE
+),
+(
+    'LO MEJOR EN TECNOLOGÍA',
+    'PRODUCTOS_CATEGORIA',
+    2,
+    TRUE
+),
+(
+    'MARCAS DESTACADAS',
+    'MARCAS',
+    3,
+    TRUE
+),
+(
+    'BENEFICIOS',
+    'BENEFICIOS',
+    4,
+    TRUE
+);
+
+update SeccionHome
+set OrdenHome=4 WHERE IdSeccion= 3
+SELECT *
+FROM SeccionHome
+ORDER BY OrdenHome;
+
+
 
 CREATE TABLE SeccionProducto
 (
