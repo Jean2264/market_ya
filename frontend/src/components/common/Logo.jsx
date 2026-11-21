@@ -1,5 +1,6 @@
 import "./Logo.css";
 import { useNavigate } from "react-router-dom";
+import MarketYaIcon from "../../assets/logo.png";
 
 function Logo() {
   const navigate = useNavigate();
@@ -9,8 +10,9 @@ function Logo() {
   };
   return (
     <div className="logo">
-      {/** <img src="" alt="Logo" className="logo_img" /> */}
-      <span>MarketYa!</span>
+      <span className="logo-text">MarketYa!</span>
+
+      <img src={MarketYaIcon} alt="Market Ya" className="logo-icon" />
     </div>
   );
 }

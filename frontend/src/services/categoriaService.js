@@ -1,11 +1,5 @@
-const API_URL = "http://localhost:3000";
+import { httpRequest } from "./httpService";
 
-export async function obtenerCategoriasHome() {
-  const respuesta = await fetch(`${API_URL}/api/categorias/home`);
-
-  if (!respuesta.ok) {
-    throw new Error("Error al obtener la scategorias");
-  }
-
-  return respuesta.json();
+export function obtenerCategoriasHome() {
+  return httpRequest("/categorias/home");
 }

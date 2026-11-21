@@ -2,6 +2,7 @@ import "./HomeSections.css";
 import { useEffect, useState } from "react";
 import { obtenerSeccionesHome } from "../../services/seccionService";
 import HomeSection from "./HomeSection";
+
 function HomeSections() {
   const [secciones, setSecciones] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -11,7 +12,6 @@ function HomeSections() {
     async function cargarSecciones() {
       try {
         const data = await obtenerSeccionesHome();
-        console.log("respuesta de secciones: ", data);
         setSecciones(data);
       } catch (error) {
         setError(error.message);
@@ -19,11 +19,12 @@ function HomeSections() {
         setLoading(false);
       }
     }
+
     cargarSecciones();
   }, []);
 
   if (loading) {
-    return <p>Cargando secciones</p>;
+    return <p>Cargando secciones...</p>;
   }
 
   if (error) {
@@ -31,11 +32,11 @@ function HomeSections() {
   }
 
   return (
-    <section>
+    <div>
       {secciones.map((seccion) => (
-        <HomeSection seccion={seccion} />
+        <HomeSection key={seccion.idseccion} seccion={seccion} />
       ))}
-    </section>
+    </div>
   );
 }
 

@@ -10,11 +10,18 @@ const cors = require("cors");
 const categoriaRoutes = require("./routes/categoria.routes");
 const beneficioRoutes = require("./routes/beneficio.routes");
 const seccionRoutes = require("./routes/seccion.routes");
+const manejarError = require("./middlewares/error.middlewares");
 
 //creo la aplicacion express
 const app = express();
 
-app.use(cors());
+const env = require("./config/env");
+
+app.use(
+  cors({
+    origin: env.frontendUrl,
+  }),
+);
 
 //configuro Express para poder recibir informacion
 //en formato JSON en las peticiones  HTTP
@@ -48,5 +55,8 @@ app.get("/", async (req, res) => {
   }
 });
 
+app.use(manejarError);
+
 //exporto la app para que server pueda utilizarlo
+
 module.exports = app;

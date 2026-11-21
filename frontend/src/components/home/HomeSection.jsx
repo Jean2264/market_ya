@@ -12,25 +12,25 @@ function HomeSection({ seccion }) {
 
     case "PRODUCTOS_NUEVOS":
       return (
-        <seccion className="home-section">
+        <section className="home-section">
           <h2>{seccion.titulo}</h2>
           <p>Aca van los productos nuevos</p>
-        </seccion>
+        </section>
       );
     case "MARCAS":
       return (
-        <seccion className="home-section">
+        <section className="home-section">
           <h2>{seccion.titulo}</h2>
           <p>seccion de marcas</p>
-        </seccion>
+        </section>
       );
 
     case "PRODUCTOS_CATEGORIA":
       return (
-        <seccion className="home-section">
+        <section className="home-section">
           <h2>{seccion.titulo}</h2>
           <p>seccion de productos por categoria</p>
-        </seccion>
+        </section>
       );
 
     default:

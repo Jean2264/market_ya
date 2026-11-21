@@ -2,8 +2,11 @@ import Logo from "./Logo";
 import SearchBar from "./SearchBar";
 import "./NavBar.css";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 function NavBar() {
+  const [menuAbierto, setMenuAbierto] = useState(false);
+
   return (
     <div className="nav-top">
       <div className="nav-container">
@@ -21,6 +24,19 @@ function NavBar() {
               <i className="bi bi-cart"></i>
             </button>
           </div>
+          <button type="button" className="cart-mobile" aria-label="Carrito">
+            <i className="bi bi-cart"></i>
+            <span className="cart-count">9+</span>
+          </button>
+          <button
+            type="button"
+            className="menu-button"
+            aria-label={menuAbierto ? "cerrar menú" : "Abrir menú"}
+            aria-expanded={menuAbierto}
+            onClick={() => setMenuAbierto(!menuAbierto)}
+          >
+            <i className={menuAbierto ? "bi bi-x-lg" : "bi bi-justify"}></i>
+          </button>
         </div>
         <nav className="nav-navigation">
           <ul>
@@ -67,6 +83,31 @@ function NavBar() {
             </li>
           </ul>
         </nav>
+        {menuAbierto && (
+          <div className="mobile-menu">
+            <div className="mobile-menu-links">
+              <NavLink to="/" onClick={() => setMenuAbierto(false)}>
+                <i className="bi bi-house"></i>
+                Inicio
+              </NavLink>
+
+              <NavLink to="/ofertas" onClick={() => setMenuAbierto(false)}>
+                <i className="bi bi-tag"></i>
+                Ofertas
+              </NavLink>
+
+              <NavLink to="/mas-vendidos" onClick={() => setMenuAbierto(false)}>
+                <i className="bi bi-fire"></i>
+                Más vendidos
+              </NavLink>
+
+              <NavLink to="/novedades" onClick={() => setMenuAbierto(false)}>
+                <i className="bi bi-stars"></i>
+                Novedades
+              </NavLink>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

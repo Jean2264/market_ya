@@ -13,15 +13,16 @@
 
 .search-btn {
   border: none;
-  background-color: var(--color-button-search);
+  background-color: transparent;
   text-decoration: none;
   padding: 10px 10px;
   border-radius: 10px;
-  color: var(--color-text-search);
+  color: var(--color-text);
   width: 50px;
 }
 .search-btn i {
   font-size: 1rem;
+  font-weight: 600;
 }
 .search-input {
   flex: 1;

@@ -1,10 +1,5 @@
-const API_URL = "http://localhost:3000";
+import { httpRequest } from "./httpService";
 
-export async function obtenerBeneficiosHome() {
-  const respuesta = await fetch(`${API_URL}/api/beneficios/home`);
-
-  if (!respuesta.ok) {
-    throw new Error("Error al obtener beneficios");
-  }
-  return respuesta.json();
+export function obtenerBeneficiosHome() {
+  return httpRequest("/beneficios/home");
 }
