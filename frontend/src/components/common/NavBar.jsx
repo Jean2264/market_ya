@@ -1,10 +1,12 @@
 import Logo from "./Logo";
 import SearchBar from "./SearchBar";
+import CartIcon from "./CartIcon";
+import MenuIcon from "./MenuIcon";
 import "./NavBar.css";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
-function NavBar() {
+function NavBar({ cartCount = 10 }) {
   const [menuAbierto, setMenuAbierto] = useState(false);
 
   return (
@@ -25,8 +27,7 @@ function NavBar() {
             </button>
           </div>
           <button type="button" className="cart-mobile" aria-label="Carrito">
-            <i className="bi bi-cart"></i>
-            <span className="cart-count">9+</span>
+            <CartIcon count={cartCount} />
           </button>
           <button
             type="button"
@@ -35,7 +36,7 @@ function NavBar() {
             aria-expanded={menuAbierto}
             onClick={() => setMenuAbierto(!menuAbierto)}
           >
-            <i className={menuAbierto ? "bi bi-x-lg" : "bi bi-justify"}></i>
+            <MenuIcon open={menuAbierto} />
           </button>
         </div>
         <nav className="nav-navigation">

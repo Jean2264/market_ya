@@ -1,0 +1,21 @@
+/* src/components/MenuIcon.css */
+/* src/components/MenuIcon.css */
+.menu-svg .line {
+  transform-box: fill-box; /* ← Esta línea hace que la X quede 100% simétrica */
+  transform-origin: center;
+  transition:
+    transform 0.25s ease,
+    opacity 0.2s ease;
+}
+.menu-svg.is-open .top {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-svg.is-open .middle {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.menu-svg.is-open .bottom {
+  transform: translateY(-6px) rotate(-45deg);
+}
